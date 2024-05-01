@@ -7,7 +7,10 @@ pub struct Database {}
 impl Database {
     pub async fn connect() -> Result<SqlitePool, SqlXError> {
         Self::setup_database().await?;
-        match SqlitePoolOptions::new().connect("./example.db").await {
+        match SqlitePoolOptions::new()
+            .connect(dotenv!("DATABASE_URL"))
+            .await
+        {
             Ok(pool) => {
                 Self::migrate_database(&pool).await?;
                 Ok(pool)
@@ -22,12 +25,12 @@ impl Database {
     }
 
     async fn setup_database() -> Result<(), SqlXError> {
-        match Sqlite::database_exists("./example.db")
+        match Sqlite::database_exists(dotenv!("DATABASE_URL"))
             .await
             .unwrap_or(false)
         {
             true => Ok(()),
-            false => match Sqlite::create_database("./example.db").await {
+            false => match Sqlite::create_database(dotenv!("DATABASE_URL")).await {
                 Ok(_) => Ok(()),
                 Err(_) => panic!("Unable to create database."),
             },

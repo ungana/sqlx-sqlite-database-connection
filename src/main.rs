@@ -1,4 +1,8 @@
+#[macro_use]
+extern crate dotenv_codegen;
+
 use database::Database;
+use dotenv::dotenv;
 use sqlx::{Error as SqlXError, SqlitePool};
 
 mod database;
@@ -18,6 +22,7 @@ async fn add_user(pool: SqlitePool) -> Result<(), SqlXError> {
 
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
     match Database::connect().await {
         Ok(pool) => match add_user(pool).await {
             Ok(_) => println!("User created."),
