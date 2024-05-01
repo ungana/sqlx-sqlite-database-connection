@@ -11,5 +11,9 @@ You will need [Rust](https://rust-lang.org), [SQLite](https://sqlite.org/)(if yo
 cargo run
 ```
 
-This project simply adds "John Doe" to an `example.db` file. You can see the additions using the [SQLite](https://sqlite.org/) app of your choice.
+This project simply adds "John Doe" to an `example.db` file. You can see the additions using the [SQLite](https://sqlite.org/) app of your choice and checking the `Users` table.
+
+```sql
+SELECT * FROM USERS;
+```
 
