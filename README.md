@@ -1,7 +1,7 @@
 SQLx with SQLite Example
 ========================
 
-This is an exmaple of using [SQLx](https://github.com/launchbadge/sqlx) with [SQLite](https://sqlite.org/). It doesn't do too much, but it you can see a simple example of how to setup your project to use the two together.
+This is an example of using [SQLx](https://github.com/launchbadge/sqlx) with [SQLite](https://sqlite.org/). It doesn't do too much, but it you can see a simple example of how to setup your project to use the two together.
 
 ## Getting Started
 
