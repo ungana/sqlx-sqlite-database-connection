@@ -5,7 +5,7 @@ This is an exmaple of using [SQLx](https://github.com/launchbadge/sqlx) with [SQ
 
 ## Getting Started
 
-You will need [Rust](https://rust-lang.org). Once installed, navigate to this project in the terminal and run:
+You will need [Rust](https://rust-lang.org) and the [SQLx CLI](https://crates.io/crates/sqlx-cli). Once installed, navigate to this project in the terminal and run:
 
 ```bash
 cargo run
